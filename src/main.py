@@ -1,5 +1,6 @@
 # This is a sample Python script.
 from service.executor_service import executor_service
+from model.execution_request import ExecutionRequest
 
 
 # Press ⌃R to execute it or replace it with your code.
@@ -15,7 +16,9 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-    result = executor_service.execute("Hello world")
+    request = ExecutionRequest
+    request.command = "Hello world"
+    result = executor_service.execute(request)
     print(result)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
