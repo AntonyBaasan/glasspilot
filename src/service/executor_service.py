@@ -1,11 +1,14 @@
+import os
+
 from config.ModelEnum import ModelEnum
 from model.execution_request import ExecutionRequest
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 
+load_dotenv()
+gemini_api_key = os.getenv("GEMINI_API_KEY")
 
-gemini_api_key=load_dotenv("GEMINI_API_KEY")
 
 class ExecutorService:
     def execute(self, request: ExecutionRequest) -> str:
@@ -32,6 +35,7 @@ class ExecutorService:
 
         # Placeholder for executing a command
         return f"Executing command: {request.command}, using model: {request.model_enum}"
+
 
 # Singleton instance
 executor_service = ExecutorService()
