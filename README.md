@@ -11,7 +11,11 @@ Core Principles:
 ## Commands
 
 ```commandline
+# Commands to execute GlassPilot
 python3 src/main.py --help
 python3 src/main.py execute 'hello world'
 python3 src/main.py echo 'hello world'
+
+# Create binary executable
+pyinstaller --onefile --name glasspilot src/main.py
 ```
