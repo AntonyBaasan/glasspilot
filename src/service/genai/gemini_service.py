@@ -33,7 +33,5 @@ class GeminiService(GenAiService):
             )
         )
         return response.text
-        # Implementation for Gemini model text generation
-        return f"Generated text for prompt: {prompt} using Gemini model"
 
 gemini_service = GeminiService()
