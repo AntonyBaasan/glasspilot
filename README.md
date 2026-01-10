@@ -7,8 +7,15 @@ Core Principles:
 - Token Usage Transparency - Provides clear, real-time visibility into token consumption
 - Context-Aware Analysis - Intelligently navigates and understands code structure, dependencies, and relationships across multiple files to provide meaningful insights
 
-
 ## Commands
+```commandline
+# Commands to execute GlassPilot
+glasspilot --help
+glasspilot execute 'hello world'
+glasspilot echo 'hello world'
+```
+
+## Dev Commands
 
 ```commandline
 # Commands to execute GlassPilot
