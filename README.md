@@ -23,6 +23,11 @@ python3 src/main.py --help
 python3 src/main.py execute 'hello world'
 python3 src/main.py echo 'hello world'
 
+
+# Running link on local
+pip install flake8
+flake8 src
+
 # Create binary executable
 pyinstaller --onefile --name glasspilot src/main.py
 ```

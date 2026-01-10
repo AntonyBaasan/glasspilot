@@ -12,6 +12,7 @@ from google.genai import types
 load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 
+
 class GeminiService(GenAiService):
     def generate_text(self, request: ExecutionRequest) -> str:
         client = genai.Client(api_key=gemini_api_key)
@@ -21,7 +22,7 @@ class GeminiService(GenAiService):
                 types.Content(
                     role="user",
                     parts=[
-                        types.Part.from_text(text=request.command)
+                        types.Part.from_text(text=request.question)
                     ]
                 )
             ],
@@ -33,5 +34,6 @@ class GeminiService(GenAiService):
             )
         )
         return response.text
+
 
 gemini_service = GeminiService()
