@@ -47,10 +47,10 @@ def embed(directory: str, file_name: str):
     print(f"Loaded files: {files}")
 
     # step 2 - split documents into chunks
-    for file_metadata in files:
-        embedding_service.embed_file(file_metadata)
 
     # step 3 - create embeddings for each chunk
+    for file_metadata in files:
+        embedding_service.embed_file(file_metadata)
     # step 4 - store embeddings in vector database
 
     files = []

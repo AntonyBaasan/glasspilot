@@ -46,9 +46,8 @@ class EmbeddingService:
     def embed_directory(self, directory_path, collection):
         """Embed all text files in a directory"""
         for filename in os.listdir(directory_path):
-            if filename.endswith('.txt'):
-                file_path = os.path.join(directory_path, filename)
-                self.embed_file(file_path, collection)
+            file_path = os.path.join(directory_path, filename)
+            self.embed_file(file_path, collection)
 
     # Example: Chunking large files before embedding
     def embed_file_chunked(self, file_path, chunk_size=500):
