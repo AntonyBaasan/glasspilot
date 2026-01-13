@@ -48,10 +48,9 @@ def embed(directory: str, file_name: str):
 
     # step 2 - split documents into chunks
 
-    # step 3 - create embeddings for each chunk
+    # step 3 - create embeddings (stores in chroma db)
     for file_metadata in files:
         embedding_service.embed_file(file_metadata)
-    # step 4 - store embeddings in vector database
 
     files = []
 
