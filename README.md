@@ -24,7 +24,7 @@ python3 src/main.py execute 'hello world'
 python3 src/main.py echo 'hello world'
 
 
-# Running link on local
+# Running linting
 pip install flake8
 flake8 src
 
