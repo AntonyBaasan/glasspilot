@@ -92,6 +92,10 @@ class EmbeddingService:
             n_results=n_results
         )
 
+        if results is None or len(results['documents'][0]) == 0:
+            print("No results found.")
+            return []
+
         found_files = []
         print(f"\nTop {n_results} results for: '{query_text}'")
         for i, (doc, metadata, distance) in enumerate(zip(
