@@ -47,6 +47,7 @@ def embed(directory: str, file_name: str):
     print(f"Loaded files: {files}")
 
     # step 2 - split documents into chunks
+    # TODO: coming soon
 
     # step 3 - create embeddings (stores in chroma db)
     for file_metadata in files:
@@ -58,6 +59,7 @@ def embed(directory: str, file_name: str):
 @app.command()
 def search(text: str):
     # step 1 - create embedding for the input text
+    found = embedding_service.search_documents(text, 3)
     # step 2 - search vector database for similar embeddings
     print(f"Searching embedded documents for text: {text}")
 

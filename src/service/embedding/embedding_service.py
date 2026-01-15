@@ -79,7 +79,7 @@ class EmbeddingService:
             print(f"Error embedding {file_path}: {e}")
 
     # Example: Querying the collection
-    def search_documents(self, query_text, collection, n_results=3):
+    def search_documents(self, query_text: str, n_results: int=3):
         """Search for similar documents"""
 
         # Create or get a collection with the embedding function
@@ -92,6 +92,7 @@ class EmbeddingService:
             n_results=n_results
         )
 
+        found_files = []
         print(f"\nTop {n_results} results for: '{query_text}'")
         for i, (doc, metadata, distance) in enumerate(zip(
                 results['documents'][0],
@@ -101,6 +102,12 @@ class EmbeddingService:
             print(f"\n--- Result {i + 1} (Distance: {distance:.4f}) ---")
             print(f"Source: {metadata.get('source', 'Unknown')}")
             print(f"Content preview: {doc[:200]}...")
+            path, file_name = os.path.split(metadata.get('source', 'Unknown'))
+            found_files.append(FileMetadata(path=path, file_name=file_name))
+
+        return found_files
+
+
 
 
 # singleton service
